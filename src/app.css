@@ -6,6 +6,8 @@
     --Very-Dark-Blue: hsl(234, 12%, 34%);
     --Grayish-Blue: hsl(229, 6%, 66%);
     --Very-Light-Gray: hsl(0, 0%, 98%);
+
+    --animation: grow 1.2s 1 .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 *,
 *::before,
@@ -121,10 +123,10 @@ img{
 /* ANIMATION */
 @keyframes grow {
     0%{
-        transform: scale(0);
+        transform: scale(0.5);
     }
     40%{
-        transform: scale(1.05);
+        transform: scale(1.01);
     }
     80%{
         transform: scale(0.85);
@@ -135,11 +137,12 @@ img{
 }
 
 /* =========================
-      |HEADER|
+|HEADER|
 ========================= */
 header{
     margin-bottom: 6rem;
     max-width: 50rem;
+    animation: var(--animation);
 
 }
 .heading{
@@ -154,11 +157,13 @@ header{
 }
 
 /* =========================
-      |CARD SECTION|
+|CARD SECTION|
 ========================= */
+.cardSection{
+    animation: var(--animation);
+}
 .card{
     align-self: center;
-    animation: grow 1.7s 1 .1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .card__heading p{
     line-height: 1.8;
@@ -169,8 +174,8 @@ header{
 
 /* =========================
       |MEDIA QUERY|
-========================= */
-@media (min-width: 55em){
+      ========================= */
+      @media (min-width: 55em){
     .cardSection{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -183,5 +188,5 @@ header{
     .card{
         margin-bottom: 0;
     }
-
+    
 }
